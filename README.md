@@ -65,3 +65,46 @@ const solution = (phoneNumber) => {
   return '*'.repeat(phoneNumber.length - 4) + phoneNumber.slice(phoneNumber.length - 4, phoneNumber.length);
 }
 ```
+
+### 1-3. 행렬의 덧셈
+
+<br>
+
+<img src="./image/image03.png">
+
+```javascript
+const funcSolution = (arrArg01, arrArg02) => {
+	let arrResult = new Array(arrArg01.length).fill(0).map(()=> new Array(arrArg01[0].length).fill(0));
+	let i = 0;
+	let j = 0;
+	while (i < arrArg01.length) {
+		while (j < arrArg01[i].length) {
+			arrResult[i][j] = arrArg01[i][j] + arrArg02[i][j]
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return arrResult;
+};
+
+const funcSolution = (arrArg01, arrArg02) => {
+  return arrArg01.map((value01, index01) => value01.map((value02, index02) => value02 + arrArg02[index01][index02])) 
+}
+const arr01 =[[1,2],[2,3]]
+const arr02 =[[3,4],[5,6]]
+console.log(funcSolution(arr01,arr02))
+```
+
+### 1-4. 짝수와 홀수
+
+<br>
+
+<img src="./image/image04.png">
+
+```javascript
+const funcSolution = (numArg) => {
+  return ( numArg % 2 ) ? "Odd" : "Even";
+}
+console.log(funcSolution(5));
+```
