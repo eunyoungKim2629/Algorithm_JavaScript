@@ -91,9 +91,6 @@ const funcSolution = (arrArg01, arrArg02) => {
 const funcSolution = (arrArg01, arrArg02) => {
   return arrArg01.map((value01, index01) => value01.map((value02, index02) => value02 + arrArg02[index01][index02])) 
 }
-const arr01 =[[1,2],[2,3]]
-const arr02 =[[3,4],[5,6]]
-console.log(funcSolution(arr01,arr02))
 ```
 
 ### 1-4. 짝수와 홀수
@@ -106,5 +103,28 @@ console.log(funcSolution(arr01,arr02))
 const funcSolution = (numArg) => {
   return ( numArg % 2 ) ? "Odd" : "Even";
 }
-console.log(funcSolution(5));
+```
+
+### 1-5. 제일 작은 수 제거하기
+
+<br>
+
+<img src="./image/image05.png">
+
+```javascript
+function solution(arrArg) {
+	return arrArg.length > 1 ? arrArg.filter((num) => num !== Math.min(...arrArg)) : [-1];
+};
+```
+
+### 1-6. 자연수 뒤집어 배열로 만들기
+
+<br>
+
+<img src="./image/image06.png">
+
+```javascript
+function solution(n) {
+	return n.toString().split('').reverse().map((num) => parseInt(num));
+}
 ```
