@@ -29,7 +29,8 @@
 function solution(x, n) {
 	return new Array(n).fill(x).map((value, index) => value * (index + 1));
 }
-
+```
+```javascript
 function solution(x, n) {
 	const result = [];
 	let i = 1;
@@ -56,11 +57,13 @@ const solution = (phoneNumber) => {
   }
   return arr.join('');
 }
-
+```
+```javascript
 const solution = (phonNumber) => {
   return phonNumber.split('').map((str, index) => (phoneNUmber.length - index) > 4 ? '*' : str);
 }
-
+```
+```javascript
 const solution = (phoneNumber) => {
   return '*'.repeat(phoneNumber.length - 4) + phoneNumber.slice(phoneNumber.length - 4, phoneNumber.length);
 }
@@ -87,7 +90,8 @@ const funcSolution = (arrArg01, arrArg02) => {
 	}
 	return arrResult;
 };
-
+```
+```javascript
 const funcSolution = (arrArg01, arrArg02) => {
   return arrArg01.map((value01, index01) => value01.map((value02, index02) => value02 + arrArg02[index01][index02])) 
 }
@@ -126,5 +130,59 @@ function solution(arrArg) {
 ```javascript
 function solution(n) {
 	return n.toString().split('').reverse().map((num) => parseInt(num));
+}
+```
+### 1-7.
+
+<br>
+
+<img src="./image/image07.png">
+
+```javascript
+function solution(num) {
+	let result = 0;
+	let i=0;
+	let j=0;
+	while(i <= num) {
+		while(j >= 1) {
+			i * j === num && (result += i)
+			j++;
+		}
+		j =num;
+		i++;
+	}
+	return result;
+}
+```
+```javascript
+function solution(num) {
+	let result = 0;
+	for(let i=0; i<num; i++) {
+		num % i === 0 && (result += i)
+	}
+	return result;
+}
+```
+```javascript
+function sumDivisor(num) {
+	var d1 = [];
+	var sqrt = Math.sqrt(num);
+	for (var i = 1; i < sqrt; i++) {
+		if (num % i == 0) d1.push(i);
+	}
+	var d2 = d1.map((v) => num / v);
+	return d1.reduce((a, b) => a + b) + d2.reduce((a, b) => a + b);
+}
+```
+
+### 1-8.
+
+<br>
+
+<img src="./image/image08.png">
+
+```javascript
+function solution(s) {
+	return +s;
 }
 ```
