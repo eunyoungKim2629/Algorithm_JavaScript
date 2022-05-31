@@ -132,7 +132,7 @@ function solution(n) {
 	return n.toString().split('').reverse().map((num) => parseInt(num));
 }
 ```
-### 1-7.
+### 1-7. 약수의 합
 
 <br>
 
@@ -175,7 +175,7 @@ function sumDivisor(num) {
 }
 ```
 
-### 1-8.
+### 1-8. 문자열을 정수로 바꾸기
 
 <br>
 
@@ -184,5 +184,49 @@ function sumDivisor(num) {
 ```javascript
 function solution(s) {
 	return +s;
+}
+```
+
+### 1-9 문자열 다루기 기본
+
+<br>
+
+<img src="./image/image09.png">
+
+```javascript
+function solution(str) {
+	return (str.length == 4 || solution.length == 6) && str.split('').every((value) => !isNaN(value));
+}
+```
+```javascript
+function solution(s) {
+	return /^\d{4}$|^\d{6}$/.test(s)
+}
+```
+
+### 1-10 서울에서 김서방 찾기
+
+<br>
+
+<img src="./image/image10.png">
+
+```javascript
+function solution(seoul) {
+	return `김서방은 ${seoul.findIndex((name) => name == 'Kim')}에 있다`;
+}
+```
+
+```javascript
+function solution(seoul) {
+	return `김서방은 ${seoul.map((name,index) => name == 'Kim' ? index : name ).filter((value) => value == +value).join('')}에 있다`
+}
+```
+```javascript
+function solution(seoul) {
+	for (let i = 0; i < seoul.length; i++) {
+		if (seoul[i] == 'Kim') {
+			return `김서방은 ${i}에 있다`;
+		}
+	}
 }
 ```
