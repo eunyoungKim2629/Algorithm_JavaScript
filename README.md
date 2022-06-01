@@ -41,6 +41,7 @@ function solution(x, n) {
   return result;
 }
 ```
+
 ### 1-2. 핸드폰 번호 가리기
 
 <br>
@@ -132,6 +133,7 @@ function solution(n) {
 	return n.toString().split('').reverse().map((num) => parseInt(num));
 }
 ```
+
 ### 1-7. 약수의 합
 
 <br>
@@ -228,5 +230,56 @@ function solution(seoul) {
 			return `김서방은 ${i}에 있다`;
 		}
 	}
+}
+```
+
+### 1-11 두 개 뽑아서 더하기
+
+<br>
+
+<img src="./image/image11.png">
+```javascript
+
+```
+```javascript
+function solution(arrArg) {
+	const answer = new Set();
+	for(let i=0; i<arrArg.length-1; i++) {
+		for(let j=i+1; j<arrArg.length; j++) {
+			answer.add(arrArg[i]+arrArg[j])
+		}
+	}
+	return [...answer].sort((a,b) => a - b);
+}
+```
+
+### 1-12 두 정수 사이의 합
+
+<br>
+
+<img src="./image/image12.png">
+
+```javascript
+function solution(num01,num02) {
+	let numAnswer = 0;
+	if(num01 < num02) {
+		for(let i=num01; i<=num02; i++ ) {
+		numAnswer += i;
+		}
+	} else {
+		for(let i=num02; i<=num01; i++){
+			numAnswer +=i;
+		}
+	}
+	return numAnswer;
+}
+```
+```javascript
+function solution(num01, num02) {
+	let numAnswer = 0;
+	for (let i = Math.min(num01, num02); i <= Math.max(num01, num02); i++) {
+		numAnswer += i;
+	}
+	return numAnswer;
 }
 ```
