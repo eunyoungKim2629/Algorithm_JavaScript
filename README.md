@@ -239,7 +239,33 @@ function solution(seoul) {
 
 <img src="./image/image11.png">
 ```javascript
+function solution(numbers) {
+	const result = [];
 
+	for (let i = 0; i < numbers.length - 1; i++) {
+		for (let j = i + 1; j < numbers.length; j++) {
+			result.push(numbers[i] + numbers[j]);
+		}
+	}
+
+	result.sort((a, b) => a - b);
+
+	let i = 0;
+	let j = 1;
+	while (i < result.length - 1) {
+		while (j < result.length) {
+			if (result[i] == result[j]) {
+				result.splice(j, 1);
+				continue;
+			}
+			j++;
+		}
+		i++;
+		j = i + 1
+	}
+
+	return result;
+}
 ```
 ```javascript
 function solution(arrArg) {
@@ -281,5 +307,40 @@ function solution(num01, num02) {
 		numAnswer += i;
 	}
 	return numAnswer;
+}
+```
+
+### 1-13 내적
+
+<br>
+
+<img src="./image/image13.png">
+
+```javascript
+function solution(arrArg01,arrArg02) {
+	return arrArg01.map((value01,index)=> value01 * arrArg02[index]).reduce((pre,cur)=>(pre+=cur))
+}
+```
+
+### 1-14 K번째수
+
+<br>
+
+<img src="./image/image14.png">
+```javascript
+function solution(array, commands) {
+	const result = [];
+	let i = 0;
+	while (i < commands.length) {
+		const arr = array.slice(commands[i][0] - 1, commands[1]).sort((a, b) => a - b);
+		result.push(arr[commands[i][2] - 1]);
+		i++;
+	}
+	return result;
+}
+```
+```javascript
+function solution(arrArg, commands) {
+	return commands.map((value) => arrArg.slice(value[0] - 1, value[1]).sort((a, b) => a - b)[value[2] - 1]);
 }
 ```
