@@ -327,6 +327,7 @@ function solution(arrArg01,arrArg02) {
 <br>
 
 <img src="./image/image14.png">
+
 ```javascript
 function solution(array, commands) {
 	const result = [];
@@ -342,5 +343,44 @@ function solution(array, commands) {
 ```javascript
 function solution(arrArg, commands) {
 	return commands.map((value) => arrArg.slice(value[0] - 1, value[1]).sort((a, b) => a - b)[value[2] - 1]);
+}
+```
+
+### 1-15 수박수박수박수박수박수?
+
+<br>
+
+<img src="./image/image15.png">
+
+```javascript
+function solution(n) {
+    let result = '';
+    for(let i=0; i<n; i++) {
+        result += i % 2 ? '박' : '수';
+    }
+    return result;
+}
+```
+```javascript
+function solution(n) {
+    let i =0;
+    let result ='';
+    while(i < n) {
+        result += i % 2 ? '박' : '수';
+        i++;
+    }
+    return result;
+}
+```
+
+### 1-16 자릿수 더하기
+
+<br>
+
+<img src="./image/image16.png">
+
+```javascript
+function solution(N) {
+    return N.toString().split('').reduce((pre, cur) => pre + +cur, 0);
 }
 ```
