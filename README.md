@@ -384,3 +384,40 @@ function solution(N) {
     return N.toString().split('').reduce((pre, cur) => pre + +cur, 0);
 }
 ```
+
+### 1-17 문자열 내 p와 y의 개수
+
+<br>
+
+<img src="./image/image17.png">
+
+```javascript
+function solution(s) {
+	if(/p|y/gi.test(s)) {
+		if(s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length) {
+			return true;
+		} else {
+			false;
+		}
+	}else {
+		return true;
+	}
+}
+```
+```javascript
+function solution(s) {
+	return !/p|y/gi.test(s) ? true : (s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length ? true : false); 
+}
+```
+
+### 1-18 나누어 떨어지는 숫자 배열
+
+<br>
+
+<img src="./image/image18.png">
+
+```javascript
+function solution(arr, divisor) {
+	return arr.filter((value)=> value % divisor == 0).length == 0 ? [-1] : arr.filter((value)=> value % divisor == 0).sort((a,b)=>(a-b))
+}
+```
