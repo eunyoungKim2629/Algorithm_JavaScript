@@ -421,3 +421,33 @@ function solution(arr, divisor) {
 	return arr.filter((value)=> value % divisor == 0).length == 0 ? [-1] : arr.filter((value)=> value % divisor == 0).sort((a,b)=>(a-b))
 }
 ```
+
+### 1-19 같은 숫자는 싫어
+
+<br>
+
+<img src="./image/image19.png">
+
+```javascript
+function solution(arr) {
+    var answer = [];
+    answer.push(arr[0])
+   for(let i=1; i < arr.length; i++ ){
+       if(arr[i] !== arr[i-1]) {
+           answer.push(arr[i])
+       }
+   }
+    return answer;
+}
+```
+### 1-20 가운데 글자 가져오기
+
+<br>
+
+<img src="./image/image20.png">
+
+```javascript
+function solution(s) {
+   return s.length % 2 ? s[Math.floor(s.length / 2)] :  s[s.length / 2 - 1]+ s[s.length / 2]
+}
+```
