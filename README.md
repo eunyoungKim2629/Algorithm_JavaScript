@@ -451,3 +451,35 @@ function solution(s) {
    return s.length % 2 ? s[Math.floor(s.length / 2)] :  s[s.length / 2 - 1]+ s[s.length / 2]
 }
 ```
+
+### 1-21 나머지가 1이 되는 수 찾기
+
+<br>
+
+<img src="./image/image21.png">
+
+```javascript
+function solution(n) {
+    let x = 2;
+    while(true) {
+        if( n % x == 1) return x;
+            x++;
+    }
+}
+```
+
+### 1-22 2016년
+
+<br>
+
+<img src="./image/image22.png">
+
+```javascript
+function solution(a, b) {
+    const days= ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    let date = new Date(`2016/${a}/${b}`);
+    let answerDate = days[date.getDay()]
+   
+    return answerDate;
+}
+```
