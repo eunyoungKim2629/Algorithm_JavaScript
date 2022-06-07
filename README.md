@@ -483,3 +483,36 @@ function solution(a, b) {
     return answerDate;
 }
 ```
+
+### 1-23 예산
+
+<br>
+
+<img src="./image/image23.png">
+
+```javascript
+function solution(d, budget) {
+    return d.sort((a,b) => a-b).filter(num => { 
+        budget = budget - num; 
+        return budget >= 0;
+    }).length;
+}
+```
+
+```javascript
+function solution(d, budget) {
+    const result = 0;
+    const arr = d.sort((a, b) => a - b);
+    let i = 0;
+    
+    while (i < arr.length) {
+        budget = budget - arr[i];
+        if (budget >= 0) {
+            result++;
+        } else {
+            return result;
+        }
+        i++;
+    }
+}
+```
