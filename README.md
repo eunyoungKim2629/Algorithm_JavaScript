@@ -501,8 +501,8 @@ function solution(d, budget) {
 
 ```javascript
 function solution(d, budget) {
-    const result = 0;
     const arr = d.sort((a, b) => a - b);
+    let result = 0;
     let i = 0;
     
     while (i < arr.length) {
@@ -514,5 +514,18 @@ function solution(d, budget) {
         }
         i++;
     }
+    return result;
+}
+```
+
+### 1-24 음양 더하기
+
+<br>
+
+<img src="./image/image24.png">
+
+```javascript
+function solution(absolutes, signs) {
+    return absolutes.map((num, index) => signs[index] ? num : -num).reduce((pre, cur) => pre += cur, 0);
 }
 ```
