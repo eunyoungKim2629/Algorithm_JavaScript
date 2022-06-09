@@ -529,3 +529,33 @@ function solution(absolutes, signs) {
     return absolutes.map((num, index) => signs[index] ? num : -num).reduce((pre, cur) => pre += cur, 0);
 }
 ```
+
+### 1-25 부족한 금액 계산하기
+
+<br>
+
+<img src="./image/image25.png">
+
+```javascript
+function solution(price, money, count) {
+	let i = 1;
+  let num =0;
+  while( i <= count) {
+    num += price * i;
+    i++;
+  }
+  return money - num > 0 ? 0 : -1 * (money-num)
+}
+```
+
+### 1-26 이상한 문자 만들기
+
+<br>
+
+<img src="./image/image26.png">
+
+```javascript
+function solution(s) {
+  return s.split(' ').map((value) => value.split('').map((spell,index)=> index % 2 ? spell.toLowerCase() : spell.toUpperCase()).join('')).join(' ');
+}
+```
