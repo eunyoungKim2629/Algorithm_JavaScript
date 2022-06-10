@@ -559,3 +559,16 @@ function solution(s) {
   return s.split(' ').map((value) => value.split('').map((spell,index)=> index % 2 ? spell.toLowerCase() : spell.toUpperCase()).join('')).join(' ');
 }
 ```
+
+### 1-27 하샤드 수
+
+<br>
+
+<img src="./image/image27.png">
+
+```javascript
+function solution(x) {
+	return x % x.toString().split('').reduce((pre, cur) => pre + +cur, 0) === 0;
+}
+```
+
