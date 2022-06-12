@@ -583,3 +583,23 @@ function solution(n) {
   return +n.toString().split('').sort((a,b) => b - a).join('');
 }
 ```
+
+### 1-29
+
+<br>
+
+<img src="./image/image29.png">
+
+```javascript
+function solution(argNum) {
+	let numCount = 0;
+	while (argNum != 1) {
+		if (numCount >= 500) {
+			break;
+		}
+		(argNum % 2 == 1 && (argNum = argNum * 3 + 1)) || (argNum % 2 == 0 && (argNum = argNum / 2));
+		numCount++;
+	}
+	return argNum == 1 ? numCount : -1;
+}
+```
