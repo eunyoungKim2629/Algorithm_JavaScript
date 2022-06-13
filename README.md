@@ -30,15 +30,16 @@ function solution(x, n) {
 	return new Array(n).fill(x).map((value, index) => value * (index + 1));
 }
 ```
+
 ```javascript
 function solution(x, n) {
 	const result = [];
 	let i = 1;
 	while (i <= n) {
-		result.push(x * (i));
+		result.push(x * i);
 		i++;
 	}
-  return result;
+	return result;
 }
 ```
 
@@ -50,24 +51,26 @@ function solution(x, n) {
 
 ```javascript
 const solution = (phoneNumber) => {
-  const arr = phoneNumber.split('');
-  let i = 0;
-  while (i < arr.length) {
-    arr[i] = arr.length > 4 ? '*' : arr[i];
-    i++;
-  }
-  return arr.join('');
-}
+	const arr = phoneNumber.split('');
+	let i = 0;
+	while (i < arr.length) {
+		arr[i] = arr.length > 4 ? '*' : arr[i];
+		i++;
+	}
+	return arr.join('');
+};
 ```
+
 ```javascript
 const solution = (phonNumber) => {
-  return phonNumber.split('').map((str, index) => (phoneNUmber.length - index) > 4 ? '*' : str);
-}
+	return phonNumber.split('').map((str, index) => (phoneNUmber.length - index > 4 ? '*' : str));
+};
 ```
+
 ```javascript
 const solution = (phoneNumber) => {
-  return '*'.repeat(phoneNumber.length - 4) + phoneNumber.slice(phoneNumber.length - 4, phoneNumber.length);
-}
+	return '*'.repeat(phoneNumber.length - 4) + phoneNumber.slice(phoneNumber.length - 4, phoneNumber.length);
+};
 ```
 
 ### 1-3. 행렬의 덧셈
@@ -78,12 +81,12 @@ const solution = (phoneNumber) => {
 
 ```javascript
 const funcSolution = (arrArg01, arrArg02) => {
-	let arrResult = new Array(arrArg01.length).fill(0).map(()=> new Array(arrArg01[0].length).fill(0));
+	let arrResult = new Array(arrArg01.length).fill(0).map(() => new Array(arrArg01[0].length).fill(0));
 	let i = 0;
 	let j = 0;
 	while (i < arrArg01.length) {
 		while (j < arrArg01[i].length) {
-			arrResult[i][j] = arrArg01[i][j] + arrArg02[i][j]
+			arrResult[i][j] = arrArg01[i][j] + arrArg02[i][j];
 			j++;
 		}
 		j = 0;
@@ -92,10 +95,11 @@ const funcSolution = (arrArg01, arrArg02) => {
 	return arrResult;
 };
 ```
+
 ```javascript
 const funcSolution = (arrArg01, arrArg02) => {
-  return arrArg01.map((value01, index01) => value01.map((value02, index02) => value02 + arrArg02[index01][index02])) 
-}
+	return arrArg01.map((value01, index01) => value01.map((value02, index02) => value02 + arrArg02[index01][index02]));
+};
 ```
 
 ### 1-4. 짝수와 홀수
@@ -106,8 +110,8 @@ const funcSolution = (arrArg01, arrArg02) => {
 
 ```javascript
 const funcSolution = (numArg) => {
-  return ( numArg % 2 ) ? "Odd" : "Even";
-}
+	return numArg % 2 ? 'Odd' : 'Even';
+};
 ```
 
 ### 1-5. 제일 작은 수 제거하기
@@ -119,7 +123,7 @@ const funcSolution = (numArg) => {
 ```javascript
 function solution(arrArg) {
 	return arrArg.length > 1 ? arrArg.filter((num) => num !== Math.min(...arrArg)) : [-1];
-};
+}
 ```
 
 ### 1-6. 자연수 뒤집어 배열로 만들기
@@ -130,7 +134,11 @@ function solution(arrArg) {
 
 ```javascript
 function solution(n) {
-	return n.toString().split('').reverse().map((num) => parseInt(num));
+	return n
+		.toString()
+		.split('')
+		.reverse()
+		.map((num) => parseInt(num));
 }
 ```
 
@@ -143,28 +151,30 @@ function solution(n) {
 ```javascript
 function solution(num) {
 	let result = 0;
-	let i=0;
-	let j=0;
-	while(i <= num) {
-		while(j >= 1) {
-			i * j === num && (result += i)
+	let i = 0;
+	let j = 0;
+	while (i <= num) {
+		while (j >= 1) {
+			i * j === num && (result += i);
 			j++;
 		}
-		j =num;
+		j = num;
 		i++;
 	}
 	return result;
 }
 ```
+
 ```javascript
 function solution(num) {
 	let result = 0;
-	for(let i=0; i<num; i++) {
-		num % i === 0 && (result += i)
+	for (let i = 0; i < num; i++) {
+		num % i === 0 && (result += i);
 	}
 	return result;
 }
 ```
+
 ```javascript
 function sumDivisor(num) {
 	var d1 = [];
@@ -200,9 +210,10 @@ function solution(str) {
 	return (str.length == 4 || solution.length == 6) && str.split('').every((value) => !isNaN(value));
 }
 ```
+
 ```javascript
 function solution(s) {
-	return /^\d{4}$|^\d{6}$/.test(s)
+	return /^\d{4}$|^\d{6}$/.test(s);
 }
 ```
 
@@ -220,9 +231,13 @@ function solution(seoul) {
 
 ```javascript
 function solution(seoul) {
-	return `김서방은 ${seoul.map((name,index) => name == 'Kim' ? index : name ).filter((value) => value == +value).join('')}에 있다`
+	return `김서방은 ${seoul
+		.map((name, index) => (name == 'Kim' ? index : name))
+		.filter((value) => value == +value)
+		.join('')}에 있다`;
 }
 ```
+
 ```javascript
 function solution(seoul) {
 	for (let i = 0; i < seoul.length; i++) {
@@ -242,31 +257,33 @@ function solution(seoul) {
 function solution(numbers) {
 	const result = [];
 
-	for (let i = 0; i < numbers.length - 1; i++) {
-		for (let j = i + 1; j < numbers.length; j++) {
-			result.push(numbers[i] + numbers[j]);
-		}
-	}
+    for (let i = 0; i < numbers.length - 1; i++) {
+    	for (let j = i + 1; j < numbers.length; j++) {
+    		result.push(numbers[i] + numbers[j]);
+    	}
+    }
 
-	result.sort((a, b) => a - b);
+    result.sort((a, b) => a - b);
 
-	let i = 0;
-	let j = 1;
-	while (i < result.length - 1) {
-		while (j < result.length) {
-			if (result[i] == result[j]) {
-				result.splice(j, 1);
-				continue;
-			}
-			j++;
-		}
-		i++;
-		j = i + 1
-	}
+    let i = 0;
+    let j = 1;
+    while (i < result.length - 1) {
+    	while (j < result.length) {
+    		if (result[i] == result[j]) {
+    			result.splice(j, 1);
+    			continue;
+    		}
+    		j++;
+    	}
+    	i++;
+    	j = i + 1
+    }
 
-	return result;
+    return result;
+
 }
-```
+
+````
 ```javascript
 function solution(arrArg) {
 	const answer = new Set();
@@ -277,7 +294,7 @@ function solution(arrArg) {
 	}
 	return [...answer].sort((a,b) => a - b);
 }
-```
+````
 
 ### 1-12 두 정수 사이의 합
 
@@ -286,20 +303,21 @@ function solution(arrArg) {
 <img src="./image/image12.png">
 
 ```javascript
-function solution(num01,num02) {
+function solution(num01, num02) {
 	let numAnswer = 0;
-	if(num01 < num02) {
-		for(let i=num01; i<=num02; i++ ) {
-		numAnswer += i;
+	if (num01 < num02) {
+		for (let i = num01; i <= num02; i++) {
+			numAnswer += i;
 		}
 	} else {
-		for(let i=num02; i<=num01; i++){
-			numAnswer +=i;
+		for (let i = num02; i <= num01; i++) {
+			numAnswer += i;
 		}
 	}
 	return numAnswer;
 }
 ```
+
 ```javascript
 function solution(num01, num02) {
 	let numAnswer = 0;
@@ -317,8 +335,8 @@ function solution(num01, num02) {
 <img src="./image/image13.png">
 
 ```javascript
-function solution(arrArg01,arrArg02) {
-	return arrArg01.map((value01,index)=> value01 * arrArg02[index]).reduce((pre,cur)=>(pre+=cur))
+function solution(arrArg01, arrArg02) {
+	return arrArg01.map((value01, index) => value01 * arrArg02[index]).reduce((pre, cur) => (pre += cur));
 }
 ```
 
@@ -340,6 +358,7 @@ function solution(array, commands) {
 	return result;
 }
 ```
+
 ```javascript
 function solution(arrArg, commands) {
 	return commands.map((value) => arrArg.slice(value[0] - 1, value[1]).sort((a, b) => a - b)[value[2] - 1]);
@@ -354,22 +373,23 @@ function solution(arrArg, commands) {
 
 ```javascript
 function solution(n) {
-    let result = '';
-    for(let i=0; i<n; i++) {
-        result += i % 2 ? '박' : '수';
-    }
-    return result;
+	let result = '';
+	for (let i = 0; i < n; i++) {
+		result += i % 2 ? '박' : '수';
+	}
+	return result;
 }
 ```
+
 ```javascript
 function solution(n) {
-    let i =0;
-    let result ='';
-    while(i < n) {
-        result += i % 2 ? '박' : '수';
-        i++;
-    }
-    return result;
+	let i = 0;
+	let result = '';
+	while (i < n) {
+		result += i % 2 ? '박' : '수';
+		i++;
+	}
+	return result;
 }
 ```
 
@@ -381,7 +401,9 @@ function solution(n) {
 
 ```javascript
 function solution(N) {
-    return N.toString().split('').reduce((pre, cur) => pre + +cur, 0);
+	return N.toString()
+		.split('')
+		.reduce((pre, cur) => pre + +cur, 0);
 }
 ```
 
@@ -393,20 +415,21 @@ function solution(N) {
 
 ```javascript
 function solution(s) {
-	if(/p|y/gi.test(s)) {
-		if(s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length) {
+	if (/p|y/gi.test(s)) {
+		if (s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length) {
 			return true;
 		} else {
 			false;
 		}
-	}else {
+	} else {
 		return true;
 	}
 }
 ```
+
 ```javascript
 function solution(s) {
-	return !/p|y/gi.test(s) ? true : (s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length ? true : false); 
+	return !/p|y/gi.test(s) ? true : s.toUpperCase().split('P').length === s.toUpperCase().split('Y').length ? true : false;
 }
 ```
 
@@ -418,7 +441,7 @@ function solution(s) {
 
 ```javascript
 function solution(arr, divisor) {
-	return arr.filter((value)=> value % divisor == 0).length == 0 ? [-1] : arr.filter((value)=> value % divisor == 0).sort((a,b)=>(a-b))
+	return arr.filter((value) => value % divisor == 0).length == 0 ? [-1] : arr.filter((value) => value % divisor == 0).sort((a, b) => a - b);
 }
 ```
 
@@ -430,16 +453,17 @@ function solution(arr, divisor) {
 
 ```javascript
 function solution(arr) {
-    var answer = [];
-    answer.push(arr[0])
-   for(let i=1; i < arr.length; i++ ){
-       if(arr[i] !== arr[i-1]) {
-           answer.push(arr[i])
-       }
-   }
-    return answer;
+	var answer = [];
+	answer.push(arr[0]);
+	for (let i = 1; i < arr.length; i++) {
+		if (arr[i] !== arr[i - 1]) {
+			answer.push(arr[i]);
+		}
+	}
+	return answer;
 }
 ```
+
 ### 1-20 가운데 글자 가져오기
 
 <br>
@@ -448,7 +472,7 @@ function solution(arr) {
 
 ```javascript
 function solution(s) {
-   return s.length % 2 ? s[Math.floor(s.length / 2)] :  s[s.length / 2 - 1]+ s[s.length / 2]
+	return s.length % 2 ? s[Math.floor(s.length / 2)] : s[s.length / 2 - 1] + s[s.length / 2];
 }
 ```
 
@@ -460,11 +484,11 @@ function solution(s) {
 
 ```javascript
 function solution(n) {
-    let x = 2;
-    while(true) {
-        if( n % x == 1) return x;
-            x++;
-    }
+	let x = 2;
+	while (true) {
+		if (n % x == 1) return x;
+		x++;
+	}
 }
 ```
 
@@ -476,11 +500,11 @@ function solution(n) {
 
 ```javascript
 function solution(a, b) {
-    const days= ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-    let date = new Date(`2016/${a}/${b}`);
-    let answerDate = days[date.getDay()]
-   
-    return answerDate;
+	const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+	let date = new Date(`2016/${a}/${b}`);
+	let answerDate = days[date.getDay()];
+
+	return answerDate;
 }
 ```
 
@@ -492,29 +516,31 @@ function solution(a, b) {
 
 ```javascript
 function solution(d, budget) {
-    return d.sort((a,b) => a-b).filter(num => { 
-        budget = budget - num; 
-        return budget >= 0;
-    }).length;
+	return d
+		.sort((a, b) => a - b)
+		.filter((num) => {
+			budget = budget - num;
+			return budget >= 0;
+		}).length;
 }
 ```
 
 ```javascript
 function solution(d, budget) {
-    const arr = d.sort((a, b) => a - b);
-    let result = 0;
-    let i = 0;
-    
-    while (i < arr.length) {
-        budget = budget - arr[i];
-        if (budget >= 0) {
-            result++;
-        } else {
-            return result;
-        }
-        i++;
-    }
-    return result;
+	const arr = d.sort((a, b) => a - b);
+	let result = 0;
+	let i = 0;
+
+	while (i < arr.length) {
+		budget = budget - arr[i];
+		if (budget >= 0) {
+			result++;
+		} else {
+			return result;
+		}
+		i++;
+	}
+	return result;
 }
 ```
 
@@ -526,7 +552,7 @@ function solution(d, budget) {
 
 ```javascript
 function solution(absolutes, signs) {
-    return absolutes.map((num, index) => signs[index] ? num : -num).reduce((pre, cur) => pre += cur, 0);
+	return absolutes.map((num, index) => (signs[index] ? num : -num)).reduce((pre, cur) => (pre += cur), 0);
 }
 ```
 
@@ -539,12 +565,12 @@ function solution(absolutes, signs) {
 ```javascript
 function solution(price, money, count) {
 	let i = 1;
-  let num =0;
-  while( i <= count) {
-    num += price * i;
-    i++;
-  }
-  return money - num > 0 ? 0 : -1 * (money-num)
+	let num = 0;
+	while (i <= count) {
+		num += price * i;
+		i++;
+	}
+	return money - num > 0 ? 0 : -1 * (money - num);
 }
 ```
 
@@ -556,7 +582,15 @@ function solution(price, money, count) {
 
 ```javascript
 function solution(s) {
-  return s.split(' ').map((value) => value.split('').map((spell,index)=> index % 2 ? spell.toLowerCase() : spell.toUpperCase()).join('')).join(' ');
+	return s
+		.split(' ')
+		.map((value) =>
+			value
+				.split('')
+				.map((spell, index) => (index % 2 ? spell.toLowerCase() : spell.toUpperCase()))
+				.join('')
+		)
+		.join(' ');
 }
 ```
 
@@ -568,7 +602,14 @@ function solution(s) {
 
 ```javascript
 function solution(x) {
-	return x % x.toString().split('').reduce((pre, cur) => pre + +cur, 0) === 0;
+	return (
+		x %
+			x
+				.toString()
+				.split('')
+				.reduce((pre, cur) => pre + +cur, 0) ===
+		0
+	);
 }
 ```
 
@@ -580,11 +621,15 @@ function solution(x) {
 
 ```javascript
 function solution(n) {
-  return +n.toString().split('').sort((a,b) => b - a).join('');
+	return +n
+		.toString()
+		.split('')
+		.sort((a, b) => b - a)
+		.join('');
 }
 ```
 
-### 1-29
+### 1-29 콜라츠 추측
 
 <br>
 
@@ -601,5 +646,17 @@ function solution(argNum) {
 		numCount++;
 	}
 	return argNum == 1 ? numCount : -1;
+}
+```
+
+### 1-30 정수 내림차순으로 배치하기
+
+<br>
+
+<img src="./image/image30.png">
+
+```javascript
+function solution(n) {
+	return Math.sqrt(n) == parseInt(Math.sqrt(n)) ? Math.pow(Math.sqrt(n) + 1, 2) : -1;
 }
 ```
