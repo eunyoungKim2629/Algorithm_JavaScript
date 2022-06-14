@@ -660,3 +660,15 @@ function solution(n) {
 	return Math.sqrt(n) == parseInt(Math.sqrt(n)) ? Math.pow(Math.sqrt(n) + 1, 2) : -1;
 }
 ```
+
+### 1-31 없는 숫자 더하기
+
+<br>
+
+<img src="./image/image31.png">
+
+```javascript
+function solution(numbers) {
+	return 45 - numbers.reduce((pre, cur) => pre + cur, 0);
+}
+```
