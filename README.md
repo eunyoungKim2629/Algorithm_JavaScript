@@ -672,3 +672,30 @@ function solution(numbers) {
 	return 45 - numbers.reduce((pre, cur) => pre + cur, 0);
 }
 ```
+
+### 1-32 약수의 개수와 덧셈
+
+<br>
+
+<img src="./image/image32.png">
+
+```javascript
+function solution(left, right) {
+	let count = 0;
+	let answer = 0;
+	for (let i = left; i <= right; i++) {
+		for (let j = 1; j <= i; j++) {
+			if (i % j === 0) {
+				count += 1;
+			}
+		}
+		if (count % 2 === 0) {
+			answer += i;
+		} else {
+			answer -= i;
+		}
+		count = 0;
+	}
+	return answer;
+}
+```
