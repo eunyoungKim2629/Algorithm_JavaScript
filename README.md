@@ -740,3 +740,47 @@ function solution(strArg) {
 	return +strArg;
 }
 ```
+
+### 1-35 [1차]비밀지도
+
+<br>
+
+<img src="./image/image35.png">
+
+```javascript
+function solution(n, arr1, arr2) {
+	const result = new Array(n).fill(0).map(() => new Array(n).fill(' '));
+	const addZero = (num) => (num.length === n ? num : addZero('0' + num));
+
+	arr1 = arr1.map((num) => (num.toString(2).length !== n ? addZero(num.toString(2)) : num.toString(2)));
+	arr2 = arr2.map((num) => (num.toString(2).length !== n ? addZero(num.toString(2)) : num.toString(2)));
+
+	return result.map((arr, i) => arr.map((v, j) => (+arr1[i][j] + +arr2[i][j] ? '#' : v)).join(''));
+}
+```
+
+### 1-36
+
+<br>
+
+<img src="./image/image36.png">
+
+```javascript
+function solution(a, b) {
+	let answer = '';
+	for (let i = 0; i < a; i++) {
+		for (let j = 0; j < b; j++) {
+			answer += '*';
+		}
+		if (i === a - 1) return answer;
+		answer += '\n';
+	}
+	return answer;
+}
+```
+
+```javascript
+function solution(a, b) {
+	return `${'*'.repeat(b)}\n`.repeat(a).slice(0, -1);
+}
+```
