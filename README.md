@@ -199,7 +199,7 @@ function solution(s) {
 }
 ```
 
-### 1-9 문자열 다루기 기본
+### 1-9. 문자열 다루기 기본
 
 <br>
 
@@ -217,7 +217,7 @@ function solution(s) {
 }
 ```
 
-### 1-10 서울에서 김서방 찾기
+### 1-10. 서울에서 김서방 찾기
 
 <br>
 
@@ -248,7 +248,7 @@ function solution(seoul) {
 }
 ```
 
-### 1-11 두 개 뽑아서 더하기
+### 1-11. 두 개 뽑아서 더하기
 
 <br>
 
@@ -296,7 +296,7 @@ function solution(arrArg) {
 }
 ````
 
-### 1-12 두 정수 사이의 합
+### 1-12. 두 정수 사이의 합
 
 <br>
 
@@ -328,7 +328,7 @@ function solution(num01, num02) {
 }
 ```
 
-### 1-13 내적
+### 1-13. 내적
 
 <br>
 
@@ -340,7 +340,7 @@ function solution(arrArg01, arrArg02) {
 }
 ```
 
-### 1-14 K번째수
+### 1-14. K번째수
 
 <br>
 
@@ -365,7 +365,7 @@ function solution(arrArg, commands) {
 }
 ```
 
-### 1-15 수박수박수박수박수박수?
+### 1-15. 수박수박수박수박수박수?
 
 <br>
 
@@ -393,7 +393,7 @@ function solution(n) {
 }
 ```
 
-### 1-16 자릿수 더하기
+### 1-16. 자릿수 더하기
 
 <br>
 
@@ -407,7 +407,7 @@ function solution(N) {
 }
 ```
 
-### 1-17 문자열 내 p와 y의 개수
+### 1-17. 문자열 내 p와 y의 개수
 
 <br>
 
@@ -759,7 +759,7 @@ function solution(n, arr1, arr2) {
 }
 ```
 
-### 1-36
+### 1-36 직사각형 별찍기
 
 <br>
 
@@ -783,4 +783,31 @@ function solution(a, b) {
 function solution(a, b) {
 	return `${'*'.repeat(b)}\n`.repeat(a).slice(0, -1);
 }
+```
+
+<br>
+
+## 2. 2단계 문제
+
+### 2-1 최대값과 최솟값
+
+<br>
+
+<img src="./image/image37.png">
+
+```javascript
+function solution(n) {
+	return `${Math.min(...n.split(' ').map((v) => +v))} ${Math.max(...n.split(' ').map((v) => +v))}`;
+}
+```
+
+```javascript
+const arr = n.split(' ');
+let maxNum = parseInt(arr[0]);
+let minNum = parseInt(arr[0]);
+for (let i = 0; arr.length; i++) {
+	parseInt(arr[i] > maxNum && (maxNum = parseInt(arr[i])));
+	parseInt(arr[i] < minNum && (minNum = parseInt(arr[i])));
+}
+return `${minNum} ${maxNum}`;
 ```
