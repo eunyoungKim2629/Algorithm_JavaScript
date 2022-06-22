@@ -811,3 +811,15 @@ for (let i = 0; arr.length; i++) {
 }
 return `${minNum} ${maxNum}`;
 ```
+
+### 2-2
+
+<br>
+
+<img src="./image/image38.png">
+
+```javascript
+function solution(arr1, arr2) {
+	return arr1.map((row) => arr2[0].map((v, i) => row.reduce((pre, cur, j) => pre + cur * arr2[j][i], 0)));
+}
+```
